@@ -1,0 +1,30 @@
+{
+  "name": "1902-vue-project-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-ui":"webpack -w --config ./build/webpack.ui.config.js",
+    "dev-admin": "webpack -w --config ./build/webpack.admin.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^3.0.0",
+    "express": "^4.17.1",
+    "file-loader": "^4.0.0",
+    "formidable": "^1.2.1",
+    "mongoose": "^5.6.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.0.0",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
+  },
+  "dependencies": {
+    "element-ui": "^2.9.1",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.6"
+  }
+}
