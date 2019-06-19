@@ -8,10 +8,12 @@ app.use(express.urlencoded());
 app.use(express.static(__dirname))
 const ProductController = require("./controllers/ProductController")
 const CategoryController = require("./controllers/CategoryController")
+const CartController = require("./controllers/CartController")
 
 //注册一级路由
 app.use("/product",ProductController)
 app.use("/category",CategoryController)
+app.use("/cart",CartController)
 
 app.listen(3000,()=>{
     console.log("api server is ready on port 3000")

@@ -1,10 +1,14 @@
 <template>
-
+    <jd-cart></jd-cart>
 </template>
 
 <script>
+    import cart from "./pages/cart"
     export default {
-        name: "app"
+        name: "app",
+        components:{
+            "jd-cart":cart
+        }
     }
 </script>
 
