@@ -26,6 +26,9 @@ module.exports = {
 
     findProductsByPager(pageIndex=0,pageSize=10,where,cb){
         ProductModel.find(where).skip(pageIndex*pageSize).limit(pageSize).exec(cb)
+    },
+    delProductByWhere(where,cb){
+        ProductModel.deleteOne(where,cb)
     }
 
 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-ui":"webpack -w --config ./build/webpack.ui.config.js",
+    "dev-ui": "webpack -w --config ./build/webpack.ui.config.js",
     "dev-admin": "webpack -w --config ./build/webpack.admin.config.js"
   },
   "author": "",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "element-ui": "^2.9.1",
+    "querystring": "^0.2.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6"
   }

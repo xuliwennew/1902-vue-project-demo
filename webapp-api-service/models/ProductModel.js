@@ -7,7 +7,11 @@ const Schema = mongoose.Schema;
 
 //创建一个products集合的js结构
 let ProductSchema = new Schema({
-    title:{type:String}
+    title:{type:String},
+    price:{type:Number},
+    pic:{type:String},
+    category: {type:Array}
+
 })
 
 

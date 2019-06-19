@@ -17,14 +17,16 @@ router.all("*",(req,res,next)=>{
 })
 
 
-router.get("/",(req,res)=>{
+router.get("/list",(req,res)=>{
     ProductService.findProductsByPager(0,10,{},(err,results)=>{
         res.json(results)
     })
 
 })
 
-router.post("/product/upload",(req,res)=>{
+router.post("/upload",(req,res)=>{
+
+    //form data binary ->
     var form = new formidable.IncomingForm();   //创建上传表单
     form.encoding = 'utf-8';		//设置编辑
     form.uploadDir = 'public';	 //设置上传目录
@@ -33,6 +35,23 @@ router.post("/product/upload",(req,res)=>{
     form.parse(req, function(err, fields, files) {
         console.log(files.file.path)
         res.json({picUrl:files.file.path})
+    })
+})
+
+//product/api/add
+router.post("/api/add",(req,res)=>{
+    //form post binary stream ->json
+    console.log(req.body)
+    ProductService.saveProduct(req.body,data=>{
+        res.json({code:200})
+    })
+
+})
+
+router.delete("/api/del",(req,res)=>{
+    let where = req.body // title:xxx
+    ProductService.delProductByWhere(where,data=>{
+        res.json(data)
     })
 })
 
