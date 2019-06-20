@@ -50,7 +50,7 @@ cartInfo { Shops[ shop products[product product]]}
 
 4. 编码
 架构设计：前后台的分离项目
-nodejs + mongodb + express
+nodejs + mongodb/xx.json + express
 vue + component
 
 前缀 + 页面组件名 + 模块名
@@ -63,8 +63,31 @@ vue + component
        jd-cart-shop-product-list
        jd-cart-shop-product
 
+拆分组件->静态组装->动态的组装(data+lifecircle+设计组件的接口)
 
+ 动态组件的接口设计 props (input output)
+ @input输入属性
+  :data
+
+ @output 输出属性
+
+ jd-cart-shop-list
+  @input输入属性
+   :data cartInfo
+
+  @output 输出属性
 
 5. 测试
 6. 上线布署
- 
+
+
+6.20 - 6.27
+
+1.组件拆分
+2.组件组装 props @event
+3.组件的数据装载 (mock data )
+
+10 page
+
+webapp =
+
