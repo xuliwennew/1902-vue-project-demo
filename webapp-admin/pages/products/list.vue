@@ -1,6 +1,11 @@
 <template>
     <div>
         <el-row>
+            <el-col>
+                <login-out @out="loginOut"></login-out>
+            </el-col>
+        </el-row>
+        <el-row>
             <el-tabs @tab-click="handleTabChange"  :tab-position="tabPosition">
                 <el-tab-pane label="商品管理">
                     <el-tabs type="border-card">
@@ -94,10 +99,15 @@
 </template>
 
 <script>
+
     import {encode} from "querystring"
     import categoryApi from "../../apis/categoryApi"
     import productApi from "../../apis/productApi"
+    import userApi from "../../apis/userApi"
+    import LoginOut from "../login/loginOut";
+
     export default {
+        components: {LoginOut},
         data() {
             return {
 
@@ -120,6 +130,11 @@
             }
         },
         methods: {
+            async loginOut(){
+             let res= await userApi.loginOutUser()
+                console.log(res)
+                this.$router.push("/login")
+            },
             getLatestProduct(){
                 productApi.getProductListByPager(0,10,data=>{
                     console.log(data)
