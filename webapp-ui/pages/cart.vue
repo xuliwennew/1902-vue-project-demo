@@ -19,7 +19,7 @@
     import footer from "../components/carts/footer"
     import header from "../components/carts/header"
     import shopList from "../components/carts/shopList"
-    import cartApi from "../apis/cartApi"
+    import {mapGetters} from "vuex"
 
     export default {
         name: "cart",
@@ -33,8 +33,13 @@
         },
         data(){
           return {
-              cartInfo:{}
+
           }
+        },
+        computed:{
+            ...mapGetters({
+                cartInfo:"GETCART"
+            })
         },
         methods:{
 
@@ -44,10 +49,12 @@
              */
             _initPageData(){
 
-                cartApi.getCartInfo(data=>{
-                    console.log(data)
-                    this.cartInfo = data;
-                })
+                //从store中获取cartInfo
+                this.$store.dispatch("INIT")
+                // cartApi.getCartInfo(data=>{
+                //     console.log(data)
+                //     this.cartInfo = data;
+                // })
             },
 
             shopCheckAll(sid){
