@@ -16,7 +16,7 @@
     "express-session": "^1.16.2",
     "file-loader": "^4.0.0",
     "formidable": "^1.2.1",
-    "mongoose": "^5.6.0",
+    "mongoose": "^5.7.5",
     "style-loader": "^0.23.1",
     "url-loader": "^2.0.0",
     "vue-loader": "^15.7.0",
